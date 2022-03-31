@@ -7,6 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {path: "/", name: "Home", component: Home},
+  {path: "/beer", name: "Beer", component: Beer},
   {path: "/beer/:id", name: "Beer", component: Beer},
 ];
 
