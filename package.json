@@ -10,6 +10,7 @@
     "start": "vue-cli-service serve"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "lint-staged": "^12.3.7",
     "vue": "^2.6.11",

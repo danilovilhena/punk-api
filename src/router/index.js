@@ -6,9 +6,8 @@ import Beer from "../views/Beer";
 Vue.use(VueRouter);
 
 const routes = [
-  {path: "/", name: "Home", component: Home},
-  {path: "/beer", name: "Beer", component: Beer},
-  {path: "/beer/:id", name: "Beer", component: Beer},
+  {path: "/:page?", name: "Home", component: Home},
+  {path: "/beer/:id?", name: "Beer", component: Beer},
 ];
 
 const router = new VueRouter({mode: "history", base: process.env.BASE_URL, routes});

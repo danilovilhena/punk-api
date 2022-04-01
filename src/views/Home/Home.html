@@ -1,1 +1,13 @@
-<h1>Home</h1>
+<main>
+    <h1>Punk API</h1>
+    <h2>Brewdog's DIY Dog as an API</h2>
+    <hr>
+    <ul class="card-grid">
+        <li class="card-item" v-for="beer in beers">
+            <v-card>
+                <p>{{beer.name}}</p>
+            </v-card>
+        </li>
+    </ul>
+    <v-pagination v-model="page" :length="10" :total-visible="5" circle @input="onPageChange"></v-pagination>
+</main>
