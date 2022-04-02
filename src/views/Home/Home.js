@@ -16,13 +16,15 @@ export default {
   methods: {
     getBeers() {
       axios.get(`https://api.punkapi.com/v2/beers?per_page=20&page=${this.page}`).then(response => {
-        console.log(response.data);
         this.beers = response.data;
       });
     },
     onPageChange() {
       this.getBeers();
       this.$router.push({path: "/", query: {page: this.page}});
+    },
+    navigateToBeer(id) {
+      this.$router.replace({path: "/beer", query: {id}});
     },
   },
 };

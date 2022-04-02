@@ -19,14 +19,48 @@ h2 {
 
 ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
-/* classes styling*/
+/* classes styling */
 .card-grid {
+  margin: 2rem 0;
+}
+
+.card-row {
   display: grid;
-  grid-template: auto / repeat(4, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 1rem;
+  column-gap: 2rem;
   margin-top: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.card-row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.card-item {
+  display: contents;
+}
+
+.v-card div {
+  padding: 0.5rem 1rem;
+}
+
+.v-card img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin: 1rem 0;
+}
+
+.v-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.v-card button {
+  margin-bottom: 1rem;
 }
