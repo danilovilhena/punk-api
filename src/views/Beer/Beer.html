@@ -1,1 +1,36 @@
-<h2>Beer {{beer.name}}</h2>
+<div class="beer-card">
+    <h3>{{beer.name}}: <span>{{beer.tagline}}</span></h3>
+    <div class="flex">
+        <img :src="beer.image_url">
+        <div>
+            <p><b>Description:</b> {{beer.description}}</p>
+            <p><b class="food">Food pairings: </b> 
+                <v-chip v-for="pairing in beer.food_pairing" color="primary">{{pairing}}</v-chip>
+            </p>
+            <table>
+                <tr>
+                  <th>First Brewed</th>
+                  <th>PH</th>
+                  <th>SRM</th>
+                  <th>IBU</th>
+                  <th>EBC</th>
+                  <th>ABV</th>
+                  <th>Volume</th>
+                </tr>
+                <tr>
+                    <td>{{beer.first_brewed}}</td>
+                    <td>{{beer.ph}}</td>
+                    <td>{{beer.srm}}</td>
+                    <td>{{beer.ibu}}</td>
+                    <td>{{beer.ebc}}</td>
+                    <td>{{beer.abv}}</td>
+                    <td>{{beer.volume.value.toString() + beer.volume.unit}}</td>
+                </tr>
+            </table>
+            <v-alert text type="info">
+                {{typeof beer.brewers_tips == "string" ? beer.brewers_tips : beer.brewers_tips[0]}}
+            </v-alert>
+            <v-btn color="primary" elevation="2" @click="$router.go(-1)">Go Back</v-btn>
+        </div>
+    </div>
+</div>

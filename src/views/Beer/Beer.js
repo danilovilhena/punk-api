@@ -17,6 +17,7 @@ export default {
     getBeer() {
       axios.get(`https://api.punkapi.com/v2/beers/${this.id}`).then(response => {
         this.beer = response.data[0];
+        console.log(this.beer);
       });
     },
   },

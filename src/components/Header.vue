@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Punk API</h1>
+    <h1><router-link :to="{path: '/'}">Punk API</router-link></h1>
     <h2>Brewdog's DIY Dog as an API</h2>
     <hr />
   </header>
@@ -16,6 +16,10 @@ export default {
 h1 {
   color: var(--color-primary);
   margin-bottom: 0.25rem;
+}
+
+h1 a {
+  text-decoration: none;
 }
 
 h2 {

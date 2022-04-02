@@ -14,6 +14,13 @@ main {
   margin: 0 auto;
   padding: 1rem;
 }
+
+@media (max-width: 400px) {
+  main {
+    width: 100%;
+    padding: 1rem .5rem;
+  }
+}
 </style>
 
 <script>
