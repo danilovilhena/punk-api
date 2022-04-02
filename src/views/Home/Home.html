@@ -1,24 +1,10 @@
-<main>
-    <h1>Punk API</h1>
-    <h2>Brewdog's DIY Dog as an API</h2>
-    <hr>
+<div>
     <ul class="card-grid">
         <ul class="card-row" v-for="i in Math.ceil(beers.length / 4)">
             <li class="card-item" v-for="beer in beers.slice((i - 1) * 4, i * 4)">
-                <v-card>
-                    <img :src="beer.image_url">
-                    <div>
-                        <h3>{{beer.name}}</h3>
-                        <p>{{beer.description}}</p>
-                        <router-link :to="{path: `/beer/${beer.id}`}">
-                            <v-btn color="primary" elevation="2">
-                                View details
-                            </v-btn>
-                        </router-link>
-                    </div>
-                </v-card>
+                <Card :beer="beer"/>
             </li>
         </ul>
     </ul>
     <v-pagination v-model="page" :length="10" :total-visible="5" circle @input="onPageChange"></v-pagination>
-</main>
+</div>

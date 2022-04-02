@@ -1,8 +1,12 @@
 import axios from "axios";
+import Card from "../../components/Card.vue";
 
 export default {
   name: "Home",
   props: [],
+  components: {
+    Card,
+  },
   data() {
     return {
       beers: null,
@@ -22,9 +26,6 @@ export default {
     onPageChange() {
       this.getBeers();
       this.$router.push({path: "/", query: {page: this.page}});
-    },
-    navigateToBeer(id) {
-      this.$router.replace({path: "/beer", query: {id}});
     },
   },
 };
