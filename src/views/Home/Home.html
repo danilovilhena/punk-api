@@ -1,9 +1,9 @@
 <div>
-    <!-- TODO: Search field + Filters -->
+    <v-text-field label="Search for beers" placeholder="Search for beers" solo class="search-box" @input="getBeers" clearable v-model="search"></v-text-field>
     <ul class="card-row">
         <li class="card-item" v-for="beer in beers">
             <Card :beer="beer"/>
         </li>
     </ul>
-    <v-pagination v-model="page" :length="10" :total-visible="5" circle @input="onPageChange"></v-pagination>
+    <v-pagination v-model="page" :length="search != '' ? Math.round(beers.length/20) : 10" circle @input="onPageChange"></v-pagination>
 </div>

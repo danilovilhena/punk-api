@@ -9,7 +9,7 @@ ul {
   display: grid;
   column-gap: 2rem;
   row-gap: 2rem;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
 }
@@ -18,6 +18,11 @@ ul {
   display: contents;
 }
 
+.search-box {
+  margin-top: 1rem !important;
+}
+
+/* responsive styling */
 @media (max-width: 1000px) {
   .card-row {
     grid-template-columns: repeat(3, 1fr);
