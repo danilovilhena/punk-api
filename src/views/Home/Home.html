@@ -1,10 +1,8 @@
 <div>
-    <ul class="card-grid">
-        <ul class="card-row" v-for="i in Math.ceil(beers.length / 4)">
-            <li class="card-item" v-for="beer in beers.slice((i - 1) * 4, i * 4)">
-                <Card :beer="beer"/>
-            </li>
-        </ul>
+    <ul class="card-row">
+        <li class="card-item" v-for="beer in beers">
+            <Card :beer="beer"/>
+        </li>
     </ul>
     <v-pagination v-model="page" :length="10" :total-visible="5" circle @input="onPageChange"></v-pagination>
 </div>
